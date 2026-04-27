@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed": "#410005",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#4edea3",
+                    "on-primary-container": "#00422b",
+                    "secondary": "#505f76",
+                    "surface-bright": "#f4fbf4",
+                    "on-surface": "#161d19",
+                    "outline-variant": "#bbcabf",
+                    "on-surface-variant": "#3c4a42",
+                    "tertiary": "#a43a3a",
+                    "surface-container": "#e8f0e9",
+                    "outline": "#6c7a71",
+                    "on-secondary-container": "#54647a",
+                    "primary-container": "#10b981",
+                    "inverse-surface": "#2b322d",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-primary-fixed": "#002113",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#006c49",
+                    "inverse-on-surface": "#ebf3eb",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "surface-container-low": "#eef6ee",
+                    "inverse-primary": "#4edea3",
+                    "tertiary-fixed-dim": "#ffb3af",
+                    "on-background": "#161d19",
+                    "secondary-container": "#d0e1fb",
+                    "background": "#f4fbf4",
+                    "tertiary-container": "#fc7c78",
+                    "surface": "#f4fbf4",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#d4dcd5",
+                    "secondary-fixed": "#d3e4fe",
+                    "surface-container-high": "#e3eae3",
+                    "on-tertiary-container": "#711419",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#dde4dd",
+                    "on-tertiary-fixed-variant": "#842225",
+                    "surface-container-highest": "#dde4dd",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#6ffbbe",
+                    "surface-tint": "#006c49",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "touch-target-min": "44px",
+                    "container-margin": "16px",
+                    "xl": "32px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "h2": ["Plus Jakarta Sans"],
+                    "price-display": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "price-display": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 shadow-sm">
+<div class="flex justify-between items-center h-16 px-4 max-w-screen-xl mx-auto font-['Plus_Jakarta_Sans'] antialiased">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-emerald-600 active:scale-95 transition-transform">arrow_back</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900">Keranjang Belanja</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50 p-2 rounded-full transition-colors">delete_sweep</button>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-emerald-100">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly smiling Indonesian merchant in a clean professional uniform, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcJ-nwWW5-jtAPSvJ4UCtdtn8ibMW-1u_bKROE4hSP220OzjE2BGX34eSS-Rzn98pc6h0qF72947XV3zpzTPMqayiD-DPqPevoliJzmj5AXpUpIAicfQckypDMf2wwBirBE50200viGhwyBdRnqfFjH5810PqbyOz_MIHHrx07ae-pmxPhMDaSegzskUELn2ygCFEE8cxsO1WAA_jNkVHhVlPJWfp2muwt-WeAmaUqxxlwZj6pQQb1l--1WAepL5qWdORQ3REYkWe8"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-44 px-4 max-w-screen-xl mx-auto">
+<!-- Cart Items List -->
+<div class="space-y-4">
+<!-- Item Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Minyak Goreng" class="w-full h-full object-cover" data-alt="Clear plastic pouch of golden cooking oil sitting on a wooden kitchen surface, clean bright studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg45PgGK48aj0xGnu8gvz5Zju6h1sdQ8nz3Hjk-F8uv5BFJdoh5Licj7T5H9blZ_WsShT5wnBq3BATrML8qlkzeh3MDnMa_N64qJR1ogI4xfoaoNbkgz1wGt1vpRMoKm3QTSqe1kDs4fLPGzFTPcJuWsj_P20rQ63PQJ-7ubLTZFIJ1K5tqj4Is_h89X0GLFrvrSQCWc8Fkgo4JyXkRZYgMjT3uz1RLksKUUvPYQ19dt0LA0T6PRIgOS8qsXkvZNw8lx6Pi3tIrt49"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-h2 text-body-lg text-on-surface">Minyak Goreng Bimoli</p>
+<p class="text-label-caps font-label-caps text-secondary">2 Liter</p>
+</div>
+<p class="font-h2 text-primary">Rp 34.500</p>
+</div>
+<div class="flex justify-between items-center mt-3">
+<button class="text-error flex items-center gap-1 hover:bg-error-container/20 p-1 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-[12px] font-semibold">Hapus</span>
+</button>
+<div class="flex items-center gap-3 bg-surface-container rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary text-[20px]">remove</span>
+</button>
+<span class="font-bold text-body-lg w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Beras" class="w-full h-full object-cover" data-alt="Close up of a burlap sack filled with white jasmine rice, grains detailed and sharp, warm rustic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcRFMrTtmtLnIOISWy46Xm4X4Zfs9MHgn_1TNFqmshOy_d4um0AsgXnb5qpCkFRDcZJYmQd4b3IGS6JZwIAECtryJfJ-FfQV1VzL6azaquiCHSS7vOMXblQ1x9H2Qjgvd4QOAzYCUHfdEsuy_L_HyMmQEkIoG0lXCfjUE0SCPcZQWB2Z33BKGhdTAMHTK91Nws-8eg747CdL_FuoMBufRE7oVVYCPoiFZw9H1eZXCoXF3G_83il1EzQHkZZ-nOTM5vmelnQvBkO3QU"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-h2 text-body-lg text-on-surface">Beras Pandan Wangi</p>
+<p class="text-label-caps font-label-caps text-secondary">5 Kg</p>
+</div>
+<p class="font-h2 text-primary">Rp 72.000</p>
+</div>
+<div class="flex justify-between items-center mt-3">
+<button class="text-error flex items-center gap-1 hover:bg-error-container/20 p-1 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-[12px] font-semibold">Hapus</span>
+</button>
+<div class="flex items-center gap-3 bg-surface-container rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary text-[20px]">remove</span>
+</button>
+<span class="font-bold text-body-lg w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Telur" class="w-full h-full object-cover" data-alt="Fresh brown organic eggs in a cardboard carton, soft diffused natural daylight, clean minimalist composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-yxv7psOodPKtdB2f-oYq7ch-VQnwqzqUBhmrmTibfPwW8o9c0kB90iWCgcHGnH_XoRC9YEpZLwzhIlK6znB1605FNM7uIvhG7_ERWThdFjWeb-ykvHApFaf5Kj-QFKW9FPzdvb8jKkXveLl6yBmycCzvPN9CT005qOLXTJOGY6nSQjMju0UJiF4fXpZ9T0xt8spvRn393o290Qg3rRq0ZbSlj4vqy_A72VdA1i1BpHNVmbHNWYFW_TGtip7iQkwlDiYlPkJD78Ke"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-h2 text-body-lg text-on-surface">Telur Ayam Negeri</p>
+<p class="text-label-caps font-label-caps text-secondary">1 Kg (16 butir)</p>
+</div>
+<p class="font-h2 text-primary">Rp 28.000</p>
+</div>
+<div class="flex justify-between items-center mt-3">
+<button class="text-error flex items-center gap-1 hover:bg-error-container/20 p-1 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-[12px] font-semibold">Hapus</span>
+</button>
+<div class="flex items-center gap-3 bg-surface-container rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary text-[20px]">remove</span>
+</button>
+<span class="font-bold text-body-lg w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded-full shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Voucher/Promo Code -->
+<div class="mt-lg bg-emerald-50 border border-emerald-100 rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-3 text-emerald-700">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-semibold text-body-md">Gunakan Voucher Diskon</span>
+</div>
+<span class="material-symbols-outlined text-emerald-600">chevron_right</span>
+</div>
+<!-- Summary Info Grid (SaaS Style) -->
+<div class="mt-lg grid grid-cols-1 gap-4">
+<div class="bg-surface-container-low rounded-2xl p-lg space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-secondary font-body-md">Subtotal</span>
+<span class="text-on-surface font-semibold">Rp 134.500</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-body-md">Diskon (Promo Toko)</span>
+<span class="text-emerald-600 font-semibold">-Rp 4.500</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-secondary font-body-md">Pajak (11%)</span>
+<span class="text-on-surface font-semibold">Rp 14.300</span>
+</div>
+<div class="pt-3 border-t border-slate-200 flex justify-between items-center">
+<span class="font-h1 text-on-surface">Total Harga</span>
+<span class="font-price-display text-primary">Rp 144.300</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Payment Bar & BottomNavBar Container -->
+<div class="fixed bottom-0 w-full z-50">
+<!-- Transaction Bar -->
+<div class="bg-white/95 backdrop-blur-md px-4 py-4 shadow-[0_-8px_30px_rgb(0,0,0,0.08)] border-t border-slate-50">
+<div class="max-w-screen-xl mx-auto">
+<button class="w-full bg-primary-container hover:bg-primary py-4 rounded-2xl flex items-center justify-center gap-3 text-white transition-all active:scale-[0.98] shadow-lg shadow-emerald-200">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-h1 text-[18px]">Bayar Sekarang • Rp 144.300</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] pb-safe">
+<div class="flex justify-around items-center h-20 px-2 max-w-screen-xl mx-auto font-['Plus_Jakarta_Sans'] text-[11px] font-medium">
+<!-- Kasir (Active) -->
+<div class="flex flex-col items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-2xl px-4 py-1.5 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<span>Kasir</span>
+</div>
+<!-- Stok -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1.5 hover:text-emerald-500 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Stok</span>
+</div>
+<!-- Riwayat -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1.5 hover:text-emerald-500 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">history</span>
+<span>Riwayat</span>
+</div>
+<!-- Laporan -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1.5 hover:text-emerald-500 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span>Laporan</span>
+</div>
+<!-- Menu -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1.5 hover:text-emerald-500 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined">menu</span>
+<span>Menu</span>
+</div>
+</div>
+</nav>
+</div>
+</body></html>
