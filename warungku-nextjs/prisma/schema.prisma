@@ -1,10 +1,10 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -15,44 +15,45 @@ model User {
   role      Role     @default(CASHIER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+
   transactions Transaction[]
 }
 
 model Product {
-  id          String   @id @default(cuid())
-  name        String
-  sku         String   @unique
-  price       Decimal  @db.Decimal(10, 2)
-  stock       Int
-  category    String
-  image       String?
-  minStock    Int      @default(5)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
+  id        String   @id @default(cuid())
+  name      String
+  sku       String   @unique
+  price     Decimal  @db.Decimal(10, 2)
+  stock     Int
+  category  String
+  image     String?
+  minStock  Int      @default(5)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
   items TransactionItem[]
 }
 
 model Transaction {
   id          String   @id @default(cuid())
-  userId      String
+  userId      String?
   total       Decimal  @db.Decimal(10, 2)
-  paymentType String
+  paymentType String   @default("CASH")
   status      Status   @default(COMPLETED)
   createdAt   DateTime @default(now())
-  
-  user  User              @relation(fields: [userId], references: [id])
+
+  user  User?             @relation(fields: [userId], references: [id])
   items TransactionItem[]
 }
 
 model TransactionItem {
-  id            String   @id @default(cuid())
+  id            String  @id @default(cuid())
   transactionId String
   productId     String
   quantity      Int
-  price         Decimal  @db.Decimal(10, 2)
-  
+  price         Decimal @db.Decimal(10, 2)
+
   transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
   product     Product     @relation(fields: [productId], references: [id])
 }
